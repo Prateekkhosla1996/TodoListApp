@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+
+    <div id="maincontainer">
+        <h1 id="heading">Todo List</h1>
+        <form action="/create-todo" method="POST">
+            <h4>description</h4>
+            <textarea name="description" cols="20" rows="2" class="input-type" ></textarea>
+            <h4>date</h4>
+            <input type="date" id="form-date" class="input-type" name="date">
+            <h4>category</h4>
+            <select name="category" id="form-category" class="input-type" name="category">
+                <option value="">choose your category</option>
+                <option value="Work"> work </option>
+                <option value="Personal">personal</option>
+                <option value="School">school</option>
+            </select>
+            <button id="submitbutton" type="submit">
+                
+                add task
+            </button>
+        </form>
+        <div class="display">
+            
+            <%for(let i of todo_list){%>
+                
+                    <div id="description-date-div">
+                        <p>
+                            <%=i.description%>
+                        </p>
+                        <p class="datedisplay">
+                            <i class="fas fa-calendar-alt"></i>
+                            <%=i.date%>
+                        </p>
+                    </div>
+                    
+                    <% if(i.category=="Personal"){ %>
+                        <div id="category-personal" class="category-class">
+                            <i class="fas fa-user-clock"></i>
+                            <p><%= i.category %></p>
+                        </div>
+                    <%}%>
+                    <% if(i.category=="School"){ %>
+                        <div id="category-school" class="category-class">
+                            <i class="fas fa-school"></i>
+                            <p><%= i.category %></p>
+                        </div>
+                    <%}%>
+                    <% if(i.category=="Work"){ %>
+                        <div id="category-work" class="category-class">
+                            <i class="fas fa-laptop-code"></i>
+                            <p><%= i.category %></p>
+                        </div>
+                    <%}%>
+                    <div id="deletebutton" class="button">
+                        <a href="/delete-todo/?id=<%= i._id %>">
+                            <i class="fas fa-trash-alt"></i></a>
+                    </div>
+            <%}%>
+
+        </div>
+    
+    </div>
+
+</body>
+</html>

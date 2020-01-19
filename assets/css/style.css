@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    
+}
+#maincontainer{
+    width: 41vw;
+    height: fit-content;
+    margin: auto;
+    border: grey solid 2px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(50deg, #2857a4 0%, #403066 74%);
+}
+#heading{
+    color: grey;
+    text-align: center;
+    
+}
+.input-type{
+    width:30vw;
+    margin-left: 5rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px #888888;
+
+}
+h4{
+    text-align: center;
+    color: grey;
+    text-transform: uppercase;
+}
+#submitbutton{
+    margin-top: 2rem;
+    width: 10rem;
+    padding: 3%;
+    margin-left: 15rem;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    text-transform: uppercase;
+}
+.display{
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: .75rem;
+    border-bottom: solid 1px black;
+}
+.button{
+    margin-left: auto;
+}
+.button i{
+   
+    color: red;
+    text-decoration: none;
+    margin-left: auto;
+}
+.button:hover{
+    background-color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+}
+.category-class{
+    margin-left: 6rem;
+}
+.datedisplay{
+    font-size: small;
+    margin-top: 2;
+    text-decoration: underline;
+}
